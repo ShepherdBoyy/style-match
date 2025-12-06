@@ -1,17 +1,9 @@
-// services/api.ts
 const API_BASE_URL = 'http://192.168.1.6:5000';
-// const API_BASE_URL = 'http://localhost:5000'; // iOS Simulator
-// const API_BASE_URL = 'http://YOUR_COMPUTER_IP:5000'; // Physical Device
 
 export interface DetectionResult {
   class: string;
   confidence: number;
-  bbox: {
-    x1: number;
-    y1: number;
-    x2: number;
-    y2: number;
-  };
+  bbox: number[];
 }
 
 export interface ApiResponse {
