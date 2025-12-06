@@ -238,7 +238,7 @@ export default function UploadScreen() {
             </MotiView>
 
             <Text className="text-lg font-semibold text-gray-900">
-              Analyzing Your Style...
+              Analyzing...
             </Text>
 
             <ActivityIndicator size="small" color="#6b7280" />
