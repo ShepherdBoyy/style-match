@@ -17,18 +17,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Long Layers (Starting below the chin for balance)',
-        hairColor: 'Deep Burgundy or Wine Red (Rich colors that pop on darker skin)',
+        hairStyle: 'Collarbone-Length Cut',
+        hairColor: 'Deep Espresso',
       },
       {
         id: 2,
-        hairStyle: 'Side-Swept Bangs (Softens forehead width)',
-        hairColor: 'Shoulder-Length Curls/Waves (Natural texture is easy to manage)',
+        hairStyle: 'Soft Side-Swept Bangs',
+        hairColor: 'Dark Burgundy/Plum',
       },
       {
         id: 3,
-        hairStyle: 'Deep Side Part (Creates an asymmetrical balance)',
-        hairColor: 'Jet Black with High Shine (Emphasizes health and richness)',
+        hairStyle: 'Long Waves with Layers at the Chin',
+        hairColor: 'Copper Brown Highlights',
       },
     ],
   },
@@ -38,18 +38,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Long Layers (Starting below the chin for balance)',
-        hairColor: 'Ash Blonde or Silver Highlights (Very popular cool tones for light skin)',
+        hairStyle: 'Collarbone-Length Cut',
+        hairColor: 'Golden Copper',
       },
       {
         id: 2,
-        hairStyle: 'Side-Swept Bangs (Softens forehead width)',
-        hairColor: 'Shoulder-Length Wavy Bob (A classic style with low maintenance)',
+        hairStyle: 'Soft Side-Swept Bangs',
+        hairColor: 'Ash Blonde/Beige Blonde',
       },
       {
         id: 3,
-        hairStyle: 'Deep Side Part (Creates an asymmetrical balance)',
-        hairColor: 'Milk Tea Brown (Subtle Warmth) (Trendy, light brown color)',
+        hairStyle: 'Long Waves with Layers at the Chin',
+        hairColor: 'Rich Mahogany',
       },
     ],
   },
@@ -59,18 +59,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Long Layers (Starting below the chin for balance)',
-        hairColor: 'Copper or Chestnut Balayage (Adds warmth and dimension to medium skin)',
+        hairStyle: 'Collarbone-Length Cut',
+        hairColor: 'Honey Balayage',
       },
       {
         id: 2,
-        hairStyle: 'Side-Swept Bangs (Softens forehead width)',
-        hairColor: 'Mid-Length with Face-Framing Layers (Versatile cut for styling)',
+        hairStyle: 'Soft Side-Swept Bangs',
+        hairColor: 'Warm Chocolate Brown',
       },
       {
         id: 3,
-        hairStyle: 'Deep Side Part (Creates an asymmetrical balance)',
-        hairColor: 'Dark Brown with Caramel Underlights (Hidden color adds pop)',
+        hairStyle: 'Long Waves with Layers at the Chin',
+        hairColor: 'Rose Gold/Warm Pink',
       },
     ],
   },
@@ -80,18 +80,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Voluminous Chin-Length Bob (Adds width at the jaw)',
-        hairColor: 'Shoulder-Length Natural Coils (Hair is allowed to expand for width)',
+        hairStyle: 'Full, Blunt Bangs',
+        hairColor: 'Deep Chocolate Brown',
       },
       {
         id: 2,
-        hairStyle: 'Full, Blunt Bangs (Breaks up the forehead length)',
-        hairColor: 'Espresso Brown with Dark Copper (Adds depth and subtle pop)',
+        hairStyle: 'Chin-Length Bob with Volume',
+        hairColor: 'Violet Black',
       },
       {
         id: 3,
-        hairStyle: 'Loose Beach Waves (Adds softness and width)',
-        hairColor: 'Braids/Twists with Dark Tones (Protective style that manages humidity)',
+        hairStyle: 'Shoulder-Length Waves with a Deep Side Part',
+        hairColor: 'Espresso Highlights',
       },
     ],
   },
@@ -101,25 +101,41 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Voluminous Chin-Length Bob (Adds width at the jaw)',
-        hairColor: 'Blunt Cut with Internal Layers (Sharp style, internal layers reduce bulk)',
+        hairStyle: 'Full, Blunt Bangs',
+        hairColor: 'Ash Brown',
       },
       {
         id: 2,
-        hairStyle: 'Full, Blunt Bangs (Breaks up the forehead length)',
-        hairColor: 'Cool Beige Blonde Color (Flattering shade of blonde for this skin tone)',
+        hairStyle: 'Chin-Length Bob with Volume',
+        hairColor: 'Strawberry Blonde',
       },
       {
         id: 3,
-        hairStyle: 'Loose Beach Waves (Adds softness and width)',
-        hairColor: 'Sleek Lived-In Lob (Long Bob) (Easy to style in humidity)',
+        hairStyle: 'Shoulder-Length Waves with a Deep Side Part',
+        hairColor: 'Light Caramel',
       },
     ],
   },
   {
     id: 6,
     attributes: 'female_oblong_medium',
-    recommendations: [],
+    recommendations: [
+      {
+        id: 1,
+        hairStyle: 'Full, Blunt Bangs',
+        hairColor: 'Medium Golden Brown',
+      },
+      {
+        id: 2,
+        hairStyle: 'Chin-Length Bob with Volume',
+        hairColor: 'Copper Brown',
+      },
+      {
+        id: 3,
+        hairStyle: 'Shoulder-Length Waves with a Deep Side Part',
+        hairColor: 'Red Velvet/Dark Cherry',
+      },
+    ],
   },
   {
     id: 7,
@@ -127,18 +143,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Curtain Bangs with Long Hair (A universally flattering, trendy style)',
-        hairColor: 'Tricolor Dip-Dye (Dark, Red, Orange) (A bold, festival-ready look)',
+        hairStyle: 'Long Layers with Curtain Bangs',
+        hairColor: 'Deep Mocha',
       },
       {
         id: 2,
-        hairStyle: 'Sleek A-Line Bob (Showcases the perfect jawline)',
-        hairColor: 'Long, Straight Hair with High Gloss (Emphasizes health and shine)',
+        hairStyle: 'Slightly Angled Lob (Long Bob)',
+        hairColor: 'Burgundy/Red-Brown Balayage',
       },
       {
         id: 3,
-        hairStyle: 'Goddess Waves (Long, cascading, voluminous waves)',
-        hairColor: 'High Ponytail with Loose Face-Framing Strands (Ideal for PH weather)',
+        hairStyle: 'Sleek, Straight Shoulder-Length Cut',
+        hairColor: 'Jet Black',
       },
     ],
   },
@@ -148,18 +164,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Curtain Bangs with Long Hair (A universally flattering, trendy style)',
-        hairColor: 'Pastel Pink or Violet Streaks (Trendy color experiments are easy to pull off)',
+        hairStyle: 'Long Layers with Curtain Bangs',
+        hairColor: 'Platinum/Silver Blonde',
       },
       {
         id: 2,
-        hairStyle: 'Sleek A-Line Bob (Showcases the perfect jawline)',
-        hairColor: 'Honey Gold Balayage (A warmer approach to light hair)',
+        hairStyle: 'Slightly Angled Lob (Long Bob)',
+        hairColor: 'Light Ash Brown with Blonde Tips',
       },
       {
         id: 3,
-        hairStyle: 'Goddess Waves (Long, cascading, voluminous waves)',
-        hairColor: 'K-Pop Inspired High Pony/Bun (Allows hair to be tied up neatly in heat)',
+        hairStyle: 'Sleek, Straight Shoulder-Length Cut',
+        hairColor: 'Copper Gold',
       },
     ],
   },
@@ -169,18 +185,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Curtain Bangs with Long Hair (A universally flattering, trendy style)',
-        hairColor: 'Auburn/Mahogany Color (Brings out the warmth in medium skin)',
+        hairStyle: 'Long Layers with Curtain Bangs',
+        hairColor: 'Caramel/Toffee Brown',
       },
       {
         id: 2,
-        hairStyle: 'Sleek A-Line Bob (Showcases the perfect jawline)',
-        hairColor: 'Full Layers on Mid-Length Hair (Adds movement, easy blow-dry style)',
+        hairStyle: 'Slightly Angled Lob (Long Bob)',
+        hairColor: 'Medium Chestnut Brown',
       },
       {
         id: 3,
-        hairStyle: 'Goddess Waves (Long, cascading, voluminous waves)',
-        hairColor: 'Chunky Highlights in Deep Caramel (A strong, defined look)',
+        hairStyle: 'Sleek, Straight Shoulder-Length Cut',
+        hairColor: 'Dark Reddish-Brown',
       },
     ],
   },
@@ -190,18 +206,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Long Hair with Center Part (Vertical lines lengthen the face)',
-        hairColor: 'Dark Chocolate Brown with Subtle Gold Shimmer (Highlights natural richness)',
+        hairStyle: 'Long Layers/Straight Hair with a Center Part',
+        hairColor: 'Deep Auburn/Dark Mahogany',
       },
       {
         id: 2,
-        hairStyle: 'Shaggy Layers with Volume on Top (Adds height and texture)',
-        hairColor: 'Short Natural Cut/Coils (Gives shape and height)',
+        hairStyle: 'Voluminous Pixie Cut (Swept Up)',
+        hairColor: 'Blue-Black/Violet Black',
       },
       {
         id: 3,
-        hairStyle: 'Asymmetrical Lob (Creates diagonal angles to slim the face)',
-        hairColor: 'Half-Up Bun/Space Buns (Draws eyes up, great for the heat)',
+        hairStyle: 'Shag Cut (Volume at the Crown)',
+        hairColor: 'Glossy Black',
       },
     ],
   },
@@ -211,18 +227,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Long Hair with Center Part (Vertical lines lengthen the face)',
-        hairColor: 'Icy Blonde/Silver Color with Dark Roots (Sharp contrast adds edge)',
+        hairStyle: 'Long Layers/Straight Hair with a Center Part',
+        hairColor: 'Ash Brown with Face-Framing Blonde',
       },
       {
         id: 2,
-        hairStyle: 'Shaggy Layers with Volume on Top (Adds height and texture)',
-        hairColor: 'Textured Lob with Wispy Bangs (Shoulder length adds length below the chin)',
+        hairStyle: 'Voluminous Pixie Cut (Swept Up)',
+        hairColor: 'Icy Blue/Pastel Colors',
       },
       {
         id: 3,
-        hairStyle: 'Asymmetrical Lob (Creates diagonal angles to slim the face)',
-        hairColor: 'Pastel Lilac or Pink Ombré (Fun, vibrant colors popular for this age group)',
+        hairStyle: 'Shag Cut (Volume at the Crown)',
+        hairColor: 'Natural Light Brown',
       },
     ],
   },
@@ -232,18 +248,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Long Hair with Center Part (Vertical lines lengthen the face)',
-        hairColor: 'Ash Brown with a Cool Tone (Counters the roundness with a cooler shade)',
+        hairStyle: 'Long Layers/Straight Hair with a Center Part',
+        hairColor: 'Warm Gold Brown',
       },
       {
         id: 2,
-        hairStyle: 'Shaggy Layers with Volume on Top (Adds height and texture)',
-        hairColor: 'Sleek, Straight Look with High Shine (Flatters and lengthens)',
+        hairStyle: 'Voluminous Pixie Cut (Swept Up)',
+        hairColor: 'Rich Copper',
       },
       {
         id: 3,
-        hairStyle: 'Asymmetrical Lob (Creates diagonal angles to slim the face)',
-        hairColor: 'Voluminous Blowout/Big Curls (Focus on volume at the crown)',
+        hairStyle: 'Shag Cut (Volume at the Crown)',
+        hairColor: 'Dark Brown with Caramel Highlights',
       },
     ],
   },
@@ -253,18 +269,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Feathered Layers (Starting below the jawline to soften corners)',
-        hairColor: 'Deep Violet or Blue-Black (Intense color contrast looks luxurious)',
+        hairStyle: 'Long Layers with Feathery Ends',
+        hairColor: 'Rich Chocolate Brown',
       },
       {
         id: 2,
-        hairStyle: 'Long, Wavy Layers with Side Part (Wavy texture minimizes angles)',
-        hairColor: 'High Volume Curly Hairstyle (Softens angles with mass and curl)',
+        hairStyle: 'Wavy Lob (Long Bob) that falls below the jaw',
+        hairColor: 'Deep Bronze Highlights',
       },
       {
         id: 3,
-        hairStyle: 'Shag Cut (Tons of texture to distract from the jaw)',
-        hairColor: 'Braided Crown or Headband Braid (Keeps hair tidy in the heat)',
+        hairStyle: 'Grown-Out Curtain Bangs',
+        hairColor: 'Darkest Plum',
       },
     ],
   },
@@ -274,18 +290,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Feathered Layers (Starting below the jawline to soften corners)',
-        hairColor: 'Strawberry Blonde or Light Copper (Soft, warm color is flattering)',
+        hairStyle: 'Long Layers with Feathery Ends',
+        hairColor: 'Butterscotch Blonde',
       },
       {
         id: 2,
-        hairStyle: 'Long, Wavy Layers with Side Part (Wavy texture minimizes angles)',
-        hairColor: 'Mid-Length Cut with Bottleneck Bangs (Soft, blended bangs)',
+        hairStyle: 'Wavy Lob (Long Bob) that falls below the jaw',
+        hairColor: 'Light Chestnut Brown',
       },
       {
         id: 3,
-        hairStyle: 'Shag Cut (Tons of texture to distract from the jaw)',
-        hairColor: 'Soft Blowout/Curls (Focus on a smooth, rounded finish)',
+        hairStyle: 'Grown-Out Curtain Bangs',
+        hairColor: 'Ash Grey',
       },
     ],
   },
@@ -295,18 +311,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Feathered Layers (Starting below the jawline to soften corners)',
-        hairColor: "Warm Brown with Golden Highlights (Enhances the skin's warmth)",
+        hairStyle: 'Long Layers with Feathery Ends',
+        hairColor: 'Medium Copper',
       },
       {
         id: 2,
-        hairStyle: 'Long, Wavy Layers with Side Part (Wavy texture minimizes angles)',
-        hairColor: 'Textured Cut with Movement (Easier to manage frizz in humidity)',
+        hairStyle: 'Wavy Lob (Long Bob) that falls below the jaw',
+        hairColor: 'Honey Brown with Deep Roots',
       },
       {
         id: 3,
-        hairStyle: 'Shag Cut (Tons of texture to distract from the jaw)',
-        hairColor: 'Slicked Back Pony/Bun with Volume at Crown (Focuses attention upward)',
+        hairStyle: 'Grown-Out Curtain Bangs',
+        hairColor: 'Red-Violet Balayage',
       },
     ],
   },
@@ -316,19 +332,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Textured Quiff (Medium length, directs volume up and back)',
-        hairColor:
-          'High Top Fade or Box Fade (Emphasizes facial structure, excellent on dark skin)',
+        hairStyle: 'Textured Quiff',
+        hairColor: 'High Top Fade or Box Fade',
       },
       {
         id: 2,
-        hairStyle: 'Fringe Up/Side Swept (Breaks up forehead width)',
-        hairColor: 'Close Shaved Head (Highlights the sharp lines of the face)',
+        hairStyle: 'Fringe Up/Side Swept',
+        hairColor: 'Close Shaved Head',
       },
       {
         id: 3,
-        hairStyle: 'Longer Slick Back with Volume (Adds balance to the lower face)',
-        hairColor: 'Shadow Fade with Curls (Fade adds dimension and contrast)',
+        hairStyle: 'Longer Slick Back with Volume',
+        hairColor: 'Shadow Fade with Curls',
       },
     ],
   },
@@ -338,18 +353,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Textured Quiff (Medium length, directs volume up and back)',
-        hairColor: 'Platinum Blonde or Ash Brown Highlights (Adds sharp contrast)',
+        hairStyle: 'Textured Quiff',
+        hairColor: 'Platinum Blonde or Ash Brown Highlights',
       },
       {
         id: 2,
-        hairStyle: 'Fringe Up/Side Swept (Breaks up forehead width)',
-        hairColor: 'Slightly longer style with low fade (Low fade contrasts light skin)',
+        hairStyle: 'Fringe Up/Side Swept',
+        hairColor: 'Slightly longer style with low fade',
       },
       {
         id: 3,
-        hairStyle: 'Longer Slick Back with Volume (Adds balance to the lower face)',
-        hairColor: 'Matte Finish Medium Pomp (Matte products look natural on light skin)',
+        hairStyle: 'Longer Slick Back with Volume',
+        hairColor: 'Matte Finish Medium Pomp',
       },
     ],
   },
@@ -359,18 +374,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Textured Quiff (Medium length, directs volume up and back)',
-        hairColor: 'Deep Side Part with Taper (Clean look that complements neutral skin)',
+        hairStyle: 'Textured Quiff',
+        hairColor: 'Deep Side Part with Taper',
       },
       {
         id: 2,
-        hairStyle: 'Fringe Up/Side Swept (Breaks up forehead width)',
-        hairColor: 'Rich Brown/Auburn Accents (Enhances the warmth of medium skin)',
+        hairStyle: 'Fringe Up/Side Swept',
+        hairColor: 'Rich Brown/Auburn Accents',
       },
       {
         id: 3,
-        hairStyle: 'Longer Slick Back with Volume (Adds balance to the lower face)',
-        hairColor: 'High Volume Messy Top (Texture is great for medium tones)',
+        hairStyle: 'Longer Slick Back with Volume',
+        hairColor: 'High Volume Messy Top',
       },
     ],
   },
@@ -380,18 +395,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Side Swept Fringe (Covers forehead, reducing length)',
-        hairColor: 'Short Dreadlocks or Twists (Adds texture without excessive height)',
+        hairStyle: 'Side Swept Fringe',
+        hairColor: 'Short Dreadlocks or Twists',
       },
       {
         id: 2,
-        hairStyle: 'Textured Curls/Waves (Adds width on the sides)',
-        hairColor: 'Afro with a Rounded Shape (Avoids height, adds width)',
+        hairStyle: 'Textured Curls/Waves',
+        hairColor: 'Afro with a Rounded Shape',
       },
       {
         id: 3,
-        hairStyle: 'Bro Flow (Longer, tousled style that adds width)',
-        hairColor: 'Shadow Fade with Sharp Part (Fade provides excellent contrast)',
+        hairStyle: 'Bro Flow',
+        hairColor: 'Shadow Fade with Sharp Part',
       },
     ],
   },
@@ -401,40 +416,60 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Side Swept Fringe (Covers forehead, reducing length)',
-        hairColor: 'French Crop with a Mid-Fade (Sharp lines contrast well with light skin)',
+        hairStyle: 'Side Swept Fringe',
+        hairColor: 'French Crop with a Mid-Fade',
       },
       {
         id: 2,
-        hairStyle: 'Textured Curls/Waves (Adds width on the sides)',
-        hairColor: 'Icy Blonde/Silver Color (Bold color choice for this age group)',
+        hairStyle: 'Textured Curls/Waves',
+        hairColor: 'Icy Blonde/Silver Color',
       },
       {
         id: 3,
-        hairStyle: 'Bro Flow (Longer, tousled style that adds width)',
-        hairColor: 'Medium Length Taper (Classic style that suits light complexion)',
+        hairStyle: 'Bro Flow',
+        hairColor: 'Medium Length Taper',
       },
     ],
   },
-  { id: 21, attributes: 'male_oblong_medium', recommendations: [] },
+  {
+    id: 21,
+    attributes: 'male_oblong_medium',
+    recommendations: [
+      {
+        id: 1,
+        hairStyle: 'Side Swept Fringe',
+        hairColor: 'Caramel Brown',
+      },
+      {
+        id: 2,
+        hairStyle: 'Textured Curls/Waves',
+        hairColor: 'Honey Brown Highlights',
+      },
+      {
+        id: 3,
+        hairStyle: 'Bro Flow',
+        hairColor: 'Copper Brown',
+      },
+    ]
+  },
   {
     id: 22,
     attributes: 'male_oval_dark',
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Classic Taper/Mid-Fade Pomp (Adds height and definition)',
-        hairColor: 'Caesar Cut with Texture (Low-maintenance, highlights jawline)',
+        hairStyle: 'Classic Taper/Mid-Fade Pomp',
+        hairColor: 'Caesar Cut with Texture',
       },
       {
         id: 2,
-        hairStyle: 'Slightly Undercut Quiff (Versatile, modern look)',
-        hairColor: 'Wavy/Coiled Top with Fade (Showcases natural hair texture)',
+        hairStyle: 'Slightly Undercut Quiff',
+        hairColor: 'Wavy/Coiled Top with Fade',
       },
       {
         id: 3,
-        hairStyle: 'Crew Cut (Emphasizes the well-balanced bone structure)',
-        hairColor: 'Buzz Cut with Line-Up (Clean and sharp, highlighting the face)',
+        hairStyle: 'Crew Cut',
+        hairColor: 'Buzz Cut with Line-Up',
       },
     ],
   },
@@ -444,18 +479,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Classic Taper/Mid-Fade Pomp (Adds height and definition)',
-        hairColor: 'Slicked Back with High Shine Pomade (Glossy finish looks sleek)',
+        hairStyle: 'Classic Taper/Mid-Fade Pomp',
+        hairColor: 'Slicked Back with High Shine Pomade',
       },
       {
         id: 2,
-        hairStyle: 'Slightly Undercut Quiff (Versatile, modern look)',
-        hairColor: 'Light Brown Subtle Balayage (Adds depth without strong contrast)',
+        hairStyle: 'Slightly Undercut Quiff',
+        hairColor: 'Light Brown Subtle Balayage',
       },
       {
         id: 3,
-        hairStyle: 'Crew Cut (Emphasizes the well-balanced bone structure)',
-        hairColor: 'Medium length, natural messy texture (Easy, low-maintenance style)',
+        hairStyle: 'Crew Cut',
+        hairColor: 'Medium length, natural messy texture',
       },
     ],
   },
@@ -465,18 +500,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Classic Taper/Mid-Fade Pomp (Adds height and definition)',
-        hairColor: 'Modern Mohawk with Drop Fade (Edgy style that works with medium tones)',
+        hairStyle: 'Classic Taper/Mid-Fade Pomp',
+        hairColor: 'Modern Mohawk with Drop Fade',
       },
       {
         id: 2,
-        hairStyle: 'Slightly Undercut Quiff (Versatile, modern look)',
-        hairColor: 'Warm Honey Brown Highlights (Complements warmer undertones)',
+        hairStyle: 'Slightly Undercut Quiff',
+        hairColor: 'Warm Honey Brown Highlights',
       },
       {
         id: 3,
-        hairStyle: 'Crew Cut (Emphasizes the well-balanced bone structure)',
-        hairColor: 'Textured Fringe with Low Fade (The fringe can be pushed back easily)',
+        hairStyle: 'Crew Cut',
+        hairColor: 'Textured Fringe with Low Fade',
       },
     ],
   },
@@ -486,18 +521,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Classic Pompadour (Maximum height to lengthen the face)',
-        hairColor: 'High Fade with Geometric Design (Fade allows for scalp art/lines)',
+        hairStyle: 'Classic Pompadour',
+        hairColor: 'High Fade with Geometric Design',
       },
       {
         id: 2,
-        hairStyle: 'Textured Spiky Top (Adds sharp angles and height)',
-        hairColor: 'Twists or Coils on Top (Natural texture provides height)',
+        hairStyle: 'Textured Spiky Top',
+        hairColor: 'Twists or Coils on Top',
       },
       {
         id: 3,
-        hairStyle: 'High Volume Quiff (Pushes hair back and up)',
-        hairColor: 'Line-Up (Edge-Up) with Mid-Fade (Crisp edges add structure to the roundness)',
+        hairStyle: 'High Volume Quiff',
+        hairColor: 'Line-Up (Edge-Up) with Mid-Fade',
       },
     ],
   },
@@ -507,18 +542,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Classic Pompadour (Maximum height to lengthen the face)',
-        hairColor: 'High Fade with Disconnected Top (Clean sides highlight contrast)',
+        hairStyle: 'Classic Pompadour',
+        hairColor: 'High Fade with Disconnected Top',
       },
       {
         id: 2,
-        hairStyle: 'Textured Spiky Top (Adds sharp angles and height)',
-        hairColor: 'Light Ash Brown Color (Creates a subtle, cooler tone)',
+        hairStyle: 'Textured Spiky Top',
+        hairColor: 'Light Ash Brown Color',
       },
       {
         id: 3,
-        hairStyle: 'High Volume Quiff (Pushes hair back and up)',
-        hairColor: 'Clean Side Part with Polish (Sharp edges are great for light skin)',
+        hairStyle: 'High Volume Quiff',
+        hairColor: 'Clean Side Part with Polish',
       },
     ],
   },
@@ -528,18 +563,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Classic Pompadour (Maximum height to lengthen the face)',
-        hairColor: 'Slicked Back Undercut (Extreme height and clean sides)',
+        hairStyle: 'Classic Pompadour',
+        hairColor: 'Slicked Back Undercut',
       },
       {
         id: 2,
-        hairStyle: 'Textured Spiky Top (Adds sharp angles and height)',
-        hairColor: 'Low to Mid Skin Fade (Versatile fade that looks great on medium tones)',
+        hairStyle: 'Textured Spiky Top',
+        hairColor: 'Low to Mid Skin Fade',
       },
       {
         id: 3,
-        hairStyle: 'High Volume Quiff (Pushes hair back and up)',
-        hairColor: 'Voluminous Textured Pomp (The texture adds width and height simultaneously)',
+        hairStyle: 'High Volume Quiff',
+        hairColor: 'Voluminous Textured Pomp',
       },
     ],
   },
@@ -549,18 +584,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Textured Crop with a Soft Fringe (Softens the forehead/hairline)',
-        hairColor: 'Natural Taper Fade with Full Curls (Soft curls contrast the sharp jaw)',
+        hairStyle: 'Textured Crop with a Soft Fringe',
+        hairColor: 'Natural Taper Fade with Full Curls',
       },
       {
         id: 2,
-        hairStyle: 'Layered, Medium Length Style (Adds movement and flow)',
-        hairColor: 'The "Mop Top" or Long Textured Style (Soft, flowing hair is a great contrast)',
+        hairStyle: 'Layered, Medium Length Style',
+        hairColor: 'The "Mop Top" or Long Textured Style',
       },
       {
         id: 3,
-        hairStyle: 'Side Part with Taper (Classic, softened by a slight wave)',
-        hairColor: 'Close Shave with Designer Stubble (Focuses on the strong jawline)',
+        hairStyle: 'Side Part with Taper',
+        hairColor: 'Close Shave with Designer Stubble',
       },
     ],
   },
@@ -570,18 +605,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Textured Crop with a Soft Fringe (Softens the forehead/hairline)',
-        hairColor: 'Loose, Wavy Top (Softer texture complements light skin)',
+        hairStyle: 'Textured Crop with a Soft Fringe',
+        hairColor: 'Loose, Wavy Top',
       },
       {
         id: 2,
-        hairStyle: 'Layered, Medium Length Style (Adds movement and flow)',
-        hairColor: 'Low Fade with Natural Top (Less contrast than a high fade)',
+        hairStyle: 'Layered, Medium Length Style',
+        hairColor: 'Low Fade with Natural Top',
       },
       {
         id: 3,
-        hairStyle: 'Side Part with Taper (Classic, softened by a slight wave)',
-        hairColor: 'Cool-Toned Brown Color (Avoids too much warmth)',
+        hairStyle: 'Side Part with Taper',
+        hairColor: 'Cool-Toned Brown Color',
       },
     ],
   },
@@ -591,18 +626,18 @@ export const recommendedData: RecommendationData[] = [
     recommendations: [
       {
         id: 1,
-        hairStyle: 'Textured Crop with a Soft Fringe (Softens the forehead/hairline)',
-        hairColor: 'Modern Shaggy Cut (Emphasizes texture and movement)',
+        hairStyle: 'Textured Crop with a Soft Fringe',
+        hairColor: 'Modern Shaggy Cut',
       },
       {
         id: 2,
-        hairStyle: 'Layered, Medium Length Style (Adds movement and flow)',
-        hairColor: 'French Crop with Mid-Fade (A versatile, slightly sharper look)',
+        hairStyle: 'Layered, Medium Length Style',
+        hairColor: 'French Crop with Mid-Fade',
       },
       {
         id: 3,
-        hairStyle: 'Side Part with Taper (Classic, softened by a slight wave)',
-        hairColor: 'Warm Chestnut Highlights (Adds dimension to medium skin)',
+        hairStyle: 'Side Part with Taper',
+        hairColor: 'Warm Chestnut Highlights',
       },
     ],
   },
