@@ -1,17 +1,38 @@
 const API_BASE_URL = 'http://192.168.1.6:5000';
 
+export interface BoundingBox {
+  x1: number;
+  x2: number;
+  y1: number;
+  y2: number;
+}
+
 export interface DetectionResult {
   class: string;
   confidence: number;
-  bbox: number[];
+  bbox: BoundingBox;
+}
+
+export interface RecommendationImage {
+  image_url: string;
+  hairStyle: string;
+  hairColor: string;
+  id: number;
+}
+
+export interface Recommendation {
+  hairstyle: string;
+  confidence: number;
+  images: RecommendationImage[];
 }
 
 export interface ApiResponse {
   success: boolean;
   detections: DetectionResult[];
-  total_detections: number;
-  primary_hairstyle: string | null;
-  primary_confidence: number;
+  primaryHairstyle: string | null;
+  primaryConfidence: number;
+  image: string | null;
+  recommendations: Recommendation[];
   error?: string;
 }
 
