@@ -64,17 +64,18 @@ export default function UploadScreen() {
       if (response.success) {
         console.log('✅ Detection successful!');
         console.log('📊 Detections:', response.detections);
-        console.log('🎯 Primary:', response.primary_hairstyle);
+        console.log('🎯 Primary:', response.primaryHairstyle);
+        console.log('🖼️ Image:', response.image);
+        console.log('💡 Recommendations:', response.recommendations);
         
-        // Store results
         setResults(
           response.detections,
-          response.primary_hairstyle,
-          response.primary_confidence,
-          selectedImage
+          response.primaryHairstyle,  
+          response.primaryConfidence,
+          response.image,             
+          response.recommendations
         );
 
-        // Navigate to results
         setTimeout(() => {
           setProcessing(false);
           console.log('🔄 Navigating to results...');
