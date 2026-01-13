@@ -18,16 +18,23 @@ import {
   Sun,
 } from 'lucide-react-native';
 import React, { useMemo, useEffect } from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, Image } from 'react-native';
 import { MotiView, MotiImage } from 'moti';
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
-import { recommendedData } from './recommendationsData';
+
+const API_BASE_URL = 'http://192.168.1.6:5000';
 
 export default function ResultsScreen() {
   const { reset: resetImage } = useImageStore();
-  const { detections, primaryHairstyle, primaryConfidence, analyzedImage, clearResults } =
-    useResultsStore();
+  const { 
+    detections, 
+    primaryHairstyle, 
+    primaryConfidence, 
+    analyzedImage, 
+    recommendations,
+    clearResults 
+  } = useResultsStore();
   const router = useRouter();
 
   // Debug logs
@@ -38,8 +45,9 @@ export default function ResultsScreen() {
       primaryHairstyle,
       primaryConfidence,
       detectionsCount: detections.length,
+      recommendationsCount: recommendations.length,
     });
-  }, [analyzedImage, primaryHairstyle, primaryConfidence, detections]);
+  }, [analyzedImage, primaryHairstyle, primaryConfidence, detections, recommendations]);
 
   // Parse the detected attributes (e.g., "male_heart_dark" -> sex, face shape, skin tone)
   const parsedAttributes = useMemo(() => {
@@ -68,41 +76,6 @@ export default function ResultsScreen() {
 
     console.log('❌ Invalid format - expected 3 parts, got:', parts.length);
     return null;
-  }, [primaryHairstyle]);
-
-  // Find matching recommendations based on primary hairstyle
-  const matchedRecommendations = useMemo(() => {
-    console.log('🔍 Looking for recommendations');
-    console.log('🎯 Primary hairstyle:', primaryHairstyle);
-
-    if (!primaryHairstyle) {
-      console.log('❌ No primaryHairstyle for recommendations');
-      return null;
-    }
-
-    const cleanedHairstyle = primaryHairstyle.trim().toLowerCase();
-    console.log('🧹 Cleaned hairstyle:', cleanedHairstyle);
-
-    const match = recommendedData.find((data) => {
-      const cleanedAttribute = data.attributes.trim().toLowerCase();
-      console.log(
-        `  Comparing: "${cleanedAttribute}" === "${cleanedHairstyle}"`,
-        cleanedAttribute === cleanedHairstyle
-      );
-      return cleanedAttribute === cleanedHairstyle;
-    });
-
-    if (match) {
-      console.log('✅ Found recommendations:', match.recommendations.length, 'items');
-    } else {
-      console.log('❌ No matching recommendations found');
-      console.log(
-        '📋 Available attributes in recommendedData:',
-        recommendedData.map((d) => d.attributes)
-      );
-    }
-
-    return match?.recommendations || null;
   }, [primaryHairstyle]);
 
   const handleNewAnalysis = () => {
@@ -179,7 +152,7 @@ export default function ResultsScreen() {
 
             <View className="w-40 overflow-hidden bg-gray-100 border border-gray-300 shadow-sm h-52 rounded-xl">
               <MotiImage
-                source={{ uri: analyzedImage }}
+                source={{ uri: `${API_BASE_URL}${analyzedImage}` }}
                 className="w-full h-full"
                 resizeMode="cover"
                 from={{ opacity: 0 }}
@@ -188,21 +161,6 @@ export default function ResultsScreen() {
               />
             </View>
           </MotiView>
-
-          {/* DEBUG INFO - REMOVE AFTER TESTING
-          {__DEV__ && (
-            <View className="p-3 border border-blue-300 rounded-lg bg-blue-50">
-              <Text className="mb-1 text-xs font-bold text-blue-900">🔍 DEBUG INFO:</Text>
-              <Text className="text-xs text-blue-800">Primary: {primaryHairstyle || 'null'}</Text>
-              <Text className="text-xs text-blue-800">Confidence: {primaryConfidence}</Text>
-              <Text className="text-xs text-blue-800">
-                Parsed: {parsedAttributes ? 'Yes' : 'No'}
-              </Text>
-              <Text className="text-xs text-blue-800">
-                Recommendations: {matchedRecommendations ? matchedRecommendations.length : 'null'}
-              </Text>
-            </View>
-          )} */}
 
           {primaryHairstyle ? (
             parsedAttributes ? (
@@ -320,8 +278,8 @@ export default function ResultsScreen() {
             </MotiView>
           )}
 
-          {/* RECOMMENDATIONS SECTION */}
-          {matchedRecommendations && matchedRecommendations.length > 0 && (
+          {/* RECOMMENDATIONS SECTION - FROM API */}
+          {recommendations && recommendations.length > 0 && (
             <MotiView
               from={{ opacity: 0, translateY: 30 }}
               animate={{ opacity: 1, translateY: 0 }}
@@ -334,63 +292,70 @@ export default function ResultsScreen() {
               </View>
 
               <Text className="text-xs text-gray-600">
-                Based on your profile, here are personalized hairstyle and color recommendations:
+                Based on your profile, here are personalized hairstyle visualizations with your face:
               </Text>
 
-              {/* Recommendation Cards */}
-              {matchedRecommendations.map((recommendation, index) => (
-                <MotiView
-                  key={recommendation.id}
-                  from={{ opacity: 0, translateX: -30 }}
-                  animate={{ opacity: 1, translateX: 0 }}
-                  transition={{
-                    type: 'timing',
-                    duration: 500,
-                    delay: 500 + index * 150,
-                  }}
-                  className="overflow-hidden border border-gray-200 rounded-xl bg-gradient-to-br">
-                  {/* Card Header */}
-                  <View className="flex-row items-center justify-between px-4 py-3 bg-gray-900">
-                    <Text className="text-base font-bold text-white">
-                      Option {recommendation.id}
-                    </Text>
-                  </View>
-
-                  {/* Card Content */}
-                  <View className="p-4 bg-white">
-                    {/* Hairstyle */}
-                    <View className="pb-3 mb-3 border-b border-gray-200">
-                      <View className="mb-1.5 flex-row items-center gap-2">
-                        <Icon as={Scissors} className="text-blue-600" size={18} />
-                        <Text className="text-xs font-semibold tracking-wide text-gray-700 uppercase">
-                          Hairstyle
-                        </Text>
+              {/* Recommendation Cards - Each recommendation category */}
+              {recommendations.map((recommendation, recIndex) => (
+                <View key={recIndex} className="gap-4">
+                  {/* Images with Descriptions */}
+                  {recommendation.images.map((image, imageIndex) => (
+                    <MotiView
+                      key={image.id}
+                      from={{ opacity: 0, translateX: -30 }}
+                      animate={{ opacity: 1, translateX: 0 }}
+                      transition={{
+                        type: 'timing',
+                        duration: 500,
+                        delay: 500 + imageIndex * 150,
+                      }}
+                      className="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-xl">
+                      {/* Image */}
+                      <View className="w-full bg-gray-100 h-80">
+                        <Image
+                          source={{ uri: `${API_BASE_URL}${image.image_url}` }}
+                          className="w-full h-full"
+                          resizeMode="cover"
+                        />
                       </View>
-                      <Text className="text-sm leading-5 text-gray-900">
-                        {recommendation.hairStyle}
-                      </Text>
-                    </View>
 
-                    {/* Hair Color */}
-                    <View>
-                      <View className="mb-1.5 flex-row items-center gap-2">
-                        <Icon as={Palette} className="text-pink-600" size={18} />
-                        <Text className="text-xs font-semibold tracking-wide text-gray-700 uppercase">
-                          Hair Color
-                        </Text>
+                      {/* Description */}
+                      <View className="p-4 bg-white">
+                        {/* Hairstyle */}
+                        <View className="pb-3 mb-3 border-b border-gray-200">
+                          <View className="mb-1.5 flex-row items-center gap-2">
+                            <Icon as={Scissors} className="text-blue-600" size={18} />
+                            <Text className="text-xs font-semibold tracking-wide text-gray-700 uppercase">
+                              Hairstyle
+                            </Text>
+                          </View>
+                          <Text className="text-sm leading-5 text-gray-900">
+                            {image.hairStyle}
+                          </Text>
+                        </View>
+
+                        {/* Hair Color */}
+                        <View>
+                          <View className="mb-1.5 flex-row items-center gap-2">
+                            <Icon as={Palette} className="text-pink-600" size={18} />
+                            <Text className="text-xs font-semibold tracking-wide text-gray-700 uppercase">
+                              Hair Color
+                            </Text>
+                          </View>
+                          <Text className="text-sm leading-5 text-gray-900">
+                            {image.hairColor}
+                          </Text>
+                        </View>
                       </View>
-                      <Text className="text-sm leading-5 text-gray-900">
-                        {recommendation.hairColor}
-                      </Text>
-                    </View>
-                  </View>
-                </MotiView>
+                    </MotiView>
+                  ))}
+                </View>
               ))}
             </MotiView>
           )}
 
           {/* NO RECOMMENDATIONS AVAILABLE */}
-          {primaryHairstyle && !matchedRecommendations && (
+          {primaryHairstyle && (!recommendations || recommendations.length === 0) && (
             <MotiView
               from={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -404,7 +369,7 @@ export default function ResultsScreen() {
                   </Text>
                   <Text className="text-xs leading-5 text-gray-600">
                     We detected your profile as "{primaryHairstyle.replace(/_/g, ' ')}" but don't
-                    have specific recommendations yet. Check console for available profiles.
+                    have specific recommendations yet.
                   </Text>
                 </View>
               </View>
