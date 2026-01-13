@@ -1,16 +1,18 @@
 import { create } from 'zustand';
-import { DetectionResult } from '@/services/api';
+import { DetectionResult, Recommendation } from '@/services/api';
 
 interface ResultsState {
   detections: DetectionResult[];
   primaryHairstyle: string | null;
   primaryConfidence: number;
   analyzedImage: string | null;
+  recommendations: Recommendation[];
   setResults: (
     detections: DetectionResult[],
     primaryHairstyle: string | null,
     primaryConfidence: number,
-    image: string
+    image: string | null,
+    recommendations: Recommendation[]
   ) => void;
   clearResults: () => void;
 }
@@ -20,12 +22,14 @@ export const useResultsStore = create<ResultsState>((set) => ({
   primaryHairstyle: null,
   primaryConfidence: 0,
   analyzedImage: null,
-  setResults: (detections, primaryHairstyle, primaryConfidence, image) =>
+  recommendations: [],
+  setResults: (detections, primaryHairstyle, primaryConfidence, image, recommendations) =>
     set({
       detections,
       primaryHairstyle,
       primaryConfidence,
       analyzedImage: image,
+      recommendations,
     }),
   clearResults: () =>
     set({
@@ -33,5 +37,6 @@ export const useResultsStore = create<ResultsState>((set) => ({
       primaryHairstyle: null,
       primaryConfidence: 0,
       analyzedImage: null,
+      recommendations: [],
     }),
 }));
