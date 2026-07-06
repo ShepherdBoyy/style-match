@@ -5,7 +5,6 @@ import { Alert } from 'react-native';
 export const useImagePicker = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  // Request ONLY the permission needed
   const requestMediaPermissions = async () => {
     const mediaPermission = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
@@ -34,7 +33,6 @@ export const useImagePicker = () => {
     return true;
   };
 
-  // PICK IMAGE FROM GALLERY
   const pickImageFromGallery = async () => {
     try {
       setIsLoading(true);
@@ -62,7 +60,6 @@ export const useImagePicker = () => {
     }
   };
 
-  // TAKE PHOTO
   const takePhoto = async () => {
     try {
       setIsLoading(true);

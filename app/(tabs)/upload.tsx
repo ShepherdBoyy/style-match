@@ -56,7 +56,6 @@ export default function UploadScreen() {
     try {
       console.log('📡 Calling API...');
       
-      // Call API
       const response = await detectHairstyle(selectedImage);
       
       console.log('✅ API Response:', response);
@@ -100,14 +99,12 @@ export default function UploadScreen() {
 
   return (
     <View className="flex-1 px-6 pb-8 bg-white">
-      {/* FADE CONTAINER */}
       <MotiView
         from={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ type: 'timing', duration: 450 }}
         className="items-center justify-center gap-6"
       >
-        {/* IMAGE SELECTED */}
         {selectedImage ? (
           <MotiView
             key="image-preview"
@@ -128,7 +125,6 @@ export default function UploadScreen() {
               }}
               className="relative w-full aspect-[3/4] max-h-96 rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-white"
             >
-              {/* Shimmer */}
               {imageLoading && (
                 <MotiView
                   from={{ translateX: -400 }}
@@ -169,7 +165,6 @@ export default function UploadScreen() {
             </Button>
           </MotiView>
         ) : (
-          /* EMPTY STATE */
           <MotiView
             key="upload-empty"
             from={{ opacity: 0, translateY: 20 }}
@@ -200,7 +195,6 @@ export default function UploadScreen() {
           </MotiView>
         )}
 
-        {/* ERROR MESSAGE */}
         {error && !processing && (
           <MotiView
             from={{ opacity: 0, scale: 0.95 }}
@@ -222,7 +216,6 @@ export default function UploadScreen() {
           </MotiView>
         )}
 
-        {/* PROCESSING OVERLAY */}
         {processing && (
           <MotiView
             from={{ opacity: 0, scale: 0.9 }}
@@ -246,7 +239,6 @@ export default function UploadScreen() {
           </MotiView>
         )}
 
-        {/* ACTION BUTTONS */}
         {!processing && (
           <MotiView
             from={{ opacity: 0, translateY: 10 }}
@@ -283,7 +275,6 @@ export default function UploadScreen() {
           </MotiView>
         )}
 
-        {/* INFO BOX */}
         <MotiView
           from={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -300,13 +291,11 @@ export default function UploadScreen() {
   );
 }
 
-/* Reusable Animated Button */
 function AnimatedButton({ children, onPress }: { children: React.ReactNode; onPress: () => void }) {
   return (
     <MotiView
       from={{ scale: 1 }}
       animate={{ scale: 1 }}
-      // @ts-ignore
       whileTap={{ scale: 0.94 }}
       transition={{ duration: 90 }}
       className="w-full"

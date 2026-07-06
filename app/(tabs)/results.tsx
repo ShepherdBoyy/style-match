@@ -49,7 +49,6 @@ export default function ResultsScreen() {
     });
   }, [analyzedImage, primaryHairstyle, primaryConfidence, detections, recommendations]);
 
-  // Parse the detected attributes (e.g., "male_heart_dark" -> sex, face shape, skin tone)
   const parsedAttributes = useMemo(() => {
     console.log('🔄 Parsing primaryHairstyle:', primaryHairstyle);
 
@@ -58,7 +57,6 @@ export default function ResultsScreen() {
       return null;
     }
 
-    // Clean and split the string
     const cleanedHairstyle = primaryHairstyle.trim().toLowerCase();
     const parts = cleanedHairstyle.split('_');
 
@@ -85,7 +83,6 @@ export default function ResultsScreen() {
     router.push('/(tabs)/upload');
   };
 
-  // When no image is analyzed
   if (!analyzedImage) {
     console.log('⚠️ No analyzed image - showing empty state');
     return (
@@ -130,7 +127,6 @@ export default function ResultsScreen() {
         contentContainerStyle={{ paddingHorizontal: 20, paddingTop: 20, paddingBottom: 120 }}
         showsVerticalScrollIndicator={false}>
         <View className="gap-5">
-          {/* HEADER */}
           <MotiView
             from={{ opacity: 0, translateY: -10 }}
             animate={{ opacity: 1, translateY: 0 }}
@@ -142,7 +138,6 @@ export default function ResultsScreen() {
             </Text>
           </MotiView>
 
-          {/* ANALYZED IMAGE - SMALLER SIZE */}
           <MotiView
             from={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -174,15 +169,12 @@ export default function ResultsScreen() {
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                   className="p-5">
-                  {/* Header */}
                   <View className="flex-row items-center mb-4">
                     <Icon as={CheckCircle} className="mr-2 text-green-400" size={22} />
                     <Text className="text-lg font-semibold text-white">Detected Profile</Text>
                   </View>
 
-                  {/* Profile Attributes */}
                   <View className="gap-3 mb-4">
-                    {/* Sex */}
                     <View className="flex-row items-center justify-between p-3 rounded-lg bg-white/10">
                       <View className="flex-row items-center gap-2">
                         <Icon as={User} className="text-gray-400" size={18} />
@@ -191,7 +183,6 @@ export default function ResultsScreen() {
                       <Text className="text-base font-bold text-white">{parsedAttributes.sex}</Text>
                     </View>
 
-                    {/* Face Shape */}
                     <View className="flex-row items-center justify-between p-3 rounded-lg bg-white/10">
                       <View className="flex-row items-center gap-2">
                         <Icon as={Heart} className="text-pink-400" size={18} />
@@ -202,7 +193,6 @@ export default function ResultsScreen() {
                       </Text>
                     </View>
 
-                    {/* Skin Tone */}
                     <View className="flex-row items-center justify-between p-3 rounded-lg bg-white/10">
                       <View className="flex-row items-center gap-2">
                         <Icon as={Sun} className="text-yellow-400" size={18} />
@@ -214,7 +204,6 @@ export default function ResultsScreen() {
                     </View>
                   </View>
 
-                  {/* Confidence */}
                   <View className="pt-3 mt-3 border-t border-white/20">
                     <View className="flex-row items-center justify-between mb-2">
                       <Text className="text-xs text-gray-300">Detection Confidence</Text>
@@ -223,7 +212,6 @@ export default function ResultsScreen() {
                       </Text>
                     </View>
 
-                    {/* Confidence Bar */}
                     <View className="h-2 overflow-hidden rounded-full bg-white/20">
                       <MotiView
                         from={{ width: '0%' }}
@@ -236,7 +224,6 @@ export default function ResultsScreen() {
                 </LinearGradient>
               </MotiView>
             ) : (
-              // Has primaryHairstyle but parsing failed
               <MotiView
                 from={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -257,7 +244,6 @@ export default function ResultsScreen() {
               </MotiView>
             )
           ) : (
-            // NO DETECTION FOUND
             <MotiView
               from={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -278,14 +264,12 @@ export default function ResultsScreen() {
             </MotiView>
           )}
 
-          {/* RECOMMENDATIONS SECTION - FROM API */}
           {recommendations && recommendations.length > 0 && (
             <MotiView
               from={{ opacity: 0, translateY: 30 }}
               animate={{ opacity: 1, translateY: 0 }}
               transition={{ duration: 600, delay: 400 }}
               className="gap-4">
-              {/* Section Header */}
               <View className="flex-row items-center gap-2 pb-2 mt-2 border-b-2 border-gray-200">
                 <Icon as={Sparkles} className="text-purple-600" size={22} />
                 <Text className="text-xl font-bold text-gray-900">Recommended for You</Text>
@@ -295,7 +279,6 @@ export default function ResultsScreen() {
                 Based on your profile, here are personalized hairstyle visualizations with your face:
               </Text>
 
-              {/* Recommendation Cards - Each recommendation category */}
               {recommendations.map((recommendation, recIndex) => (
                 <View key={recIndex} className="gap-4">
                   {/* Images with Descriptions */}
@@ -310,7 +293,6 @@ export default function ResultsScreen() {
                         delay: 500 + imageIndex * 150,
                       }}
                       className="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-xl">
-                      {/* Image */}
                       <View className="w-full bg-gray-100 h-80">
                         <Image
                           source={{ uri: `${API_BASE_URL}${image.image_url}` }}
@@ -319,9 +301,7 @@ export default function ResultsScreen() {
                         />
                       </View>
 
-                      {/* Description */}
                       <View className="p-4 bg-white">
-                        {/* Hairstyle */}
                         <View className="pb-3 mb-3 border-b border-gray-200">
                           <View className="mb-1.5 flex-row items-center gap-2">
                             <Icon as={Scissors} className="text-blue-600" size={18} />
@@ -334,7 +314,6 @@ export default function ResultsScreen() {
                           </Text>
                         </View>
 
-                        {/* Hair Color */}
                         <View>
                           <View className="mb-1.5 flex-row items-center gap-2">
                             <Icon as={Palette} className="text-pink-600" size={18} />
@@ -354,7 +333,6 @@ export default function ResultsScreen() {
             </MotiView>
           )}
 
-          {/* NO RECOMMENDATIONS AVAILABLE */}
           {primaryHairstyle && (!recommendations || recommendations.length === 0) && (
             <MotiView
               from={{ opacity: 0, scale: 0.95 }}
@@ -376,7 +354,6 @@ export default function ResultsScreen() {
             </MotiView>
           )}
 
-          {/* ALL DETECTIONS (Collapsed) */}
           {detections.length > 1 && (
             <MotiView
               from={{ opacity: 0, translateY: 20 }}
@@ -404,7 +381,6 @@ export default function ResultsScreen() {
             </MotiView>
           )}
 
-          {/* ACTION BUTTONS */}
           <MotiView
             from={{ opacity: 0, translateY: 20 }}
             animate={{ opacity: 1, translateY: 0 }}

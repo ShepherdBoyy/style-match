@@ -8,67 +8,54 @@ import { useEffect } from 'react';
 export default function TabLayout() {
   useEffect(() => {
     if (Platform.OS === 'android') {
-      NavigationBar.setBackgroundColorAsync('#ffffff'); // light nav bar
+      NavigationBar.setBackgroundColorAsync('#ffffff');
       NavigationBar.setButtonStyleAsync('dark');
     }
   }, []);
 
   return (
     <>
-      {/* Status Bar for light UI */}
       <StatusBar style="dark" backgroundColor="transparent" translucent />
 
       <Tabs
         screenOptions={{
-          headerShown: true,               // <-- SHOW HEADER
-          headerTitleAlign: 'center',      // centered header
-          headerShadowVisible: false,      // cleaner UI
-
-          // Soft black title color (not pure black)
-          headerTintColor: '#1f2937',      // charcoal gray
+          headerShown: true,
+          headerTitleAlign: 'center',
+          headerShadowVisible: false,
+          headerTintColor: '#1f2937',
           headerStyle: {
-            backgroundColor: '#ffffff',     // white header
+            backgroundColor: '#ffffff',
           },
-
           animation: 'shift',
-
-          // Light tab bar
           tabBarStyle: {
             position: 'absolute',
-            backgroundColor: '#ffffff',     // simple white
+            backgroundColor: '#ffffff',
             height: Platform.OS === 'ios' ? 85 : 65,
             paddingBottom: Platform.OS === 'ios' ? 16 : 10,
             paddingTop: Platform.OS === 'ios' ? 10 : 6,
-
             borderTopWidth: 1,
-            borderColor: '#e5e7eb',         // soft light gray border
-
-            shadowOpacity: 0,               // minimalistic design
+            borderColor: '#e5e7eb',
+            shadowOpacity: 0,
             elevation: 0,
           },
-
-          tabBarActiveTintColor: '#1f2937', // charcoal gray
+          tabBarActiveTintColor: '#1f2937',
           tabBarInactiveTintColor: '#6b7280',
-
           tabBarLabelStyle: {
             fontSize: 11,
             fontWeight: '600',
           },
-
           tabBarItemStyle: {
             justifyContent: 'center',
             alignItems: 'center',
           },
-
           tabBarHideOnKeyboard: true,
         }}
       >
 
-        {/* UPLOAD TAB */}
         <Tabs.Screen
           name="upload"
           options={{
-            title: 'Upload Photo', // <-- header title
+            title: 'Upload Photo',
             tabBarLabel: 'Upload',
             tabBarIcon: ({ color, focused }) => (
               <Upload
@@ -80,11 +67,10 @@ export default function TabLayout() {
           }}
         />
 
-        {/* RESULTS TAB */}
         <Tabs.Screen
           name="results"
           options={{
-            title: 'Your Results', // <-- header title
+            title: 'Your Results',
             tabBarLabel: 'Results',
             tabBarIcon: ({ color, focused }) => (
               <Sparkles

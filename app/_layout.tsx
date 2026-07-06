@@ -5,9 +5,8 @@ import '../global.css';
 export default function RootLayout() {
   return (
     <>
-      {/* Global Status Bar — stays visible and clean */}
       <StatusBar 
-        style="dark"          // dark icons for light background
+        style="dark"
         backgroundColor="transparent" 
         translucent 
       />
@@ -15,17 +14,11 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerShown: false,
-
-          // Smooth transitions
           animation: 'fade_from_bottom',
           animationDuration: 280,
-
-          // Light clean background
           contentStyle: {
-            backgroundColor: '#ffffff', // <— simple white background
+            backgroundColor: '#ffffff',
           },
-
-          // Smooth gesture navigation
           gestureEnabled: true,
           gestureDirection: 'horizontal',
           fullScreenGestureEnabled: true,

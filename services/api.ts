@@ -38,25 +38,20 @@ export interface ApiResponse {
 
 export const detectHairstyle = async (imageUri: string): Promise<ApiResponse> => {
   try {
-    // Create form data
     const formData = new FormData();
     
-    // Extract filename from URI
     const filename = imageUri.split('/').pop() || 'photo.jpg';
     const match = /\.(\w+)$/.exec(filename);
     const type = match ? `image/${match[1]}` : 'image/jpeg';
 
-    // Append image to form data
     formData.append('image', {
       uri: imageUri,
       name: filename,
       type: type,
     } as any);
 
-    // Optional: Add confidence threshold
     formData.append('confidence', '0.25');
 
-    // Make API request
     const response = await fetch(`${API_BASE_URL}/api/detect`, {
       method: 'POST',
       headers: {
